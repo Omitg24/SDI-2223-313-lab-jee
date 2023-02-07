@@ -1,4 +1,3 @@
-<%@ page import="com.uniovi.sdi.*, java.util.List" %>
 <%--
   Created by IntelliJ IDEA.
   User: omart
@@ -7,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.uniovi.sdi.*, java.util.List" %>
 <html lang="en">
 <head>
     <title>Servlets</title>
@@ -46,22 +47,19 @@
 <div class="container" id="main-container">
     <h2>Productos</h2>
     <div class="row ">
-        <%
-            List<Product> listProducts = new ProductsService().getProducts();
-            for(Product product : listProducts){
-        %>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <div>
-                <img src="<%=product.getImage() %>" />
-                <div><%=product.getName() %></div>
-                <a href="AddToShoppingCart?product=<%=product.getName() %>" class="btn btn-default" >
-                    <%=product.getPrice() %> €
-                </a>
+        <jsp:useBean id="productsService" class="com.uniovi.sdi.ProductsService"/>
+        <c:forEach var="product" begin="0" items="${productsService.products}">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div>
+                    <img src="<c:out value="${product.image}"/>"/>
+                    <div><c:out value="${product.name}"/></div>
+                    <a href="AddToShoppingCart?product=<c:out value="${product.name}"/>"
+                       class="btn btn-default">
+                        <c:out value="${product.price}"/> €
+                    </a>
+                </div>
             </div>
-        </div>
-        <%
-            }
-        %>
+        </c:forEach>
     </div>
 </div>
 </body>
