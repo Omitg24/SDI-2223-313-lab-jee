@@ -29,7 +29,8 @@ public class ServletShoppingCart extends HttpServlet {
         out.println("<HEAD><TITLE>Tienda SDI: Cesta de la compra</TITLE></HEAD>");
         out.println("<BODY>");
         out.println(shoppingCartToHtml(cart) + "<br>");
-        out.println("<a href=\"shop.html\">Volver</a></BODY></HTML>");
+        //out.println("<a href=\"shop.html\">Volver</a></BODY></HTML>");
+        out.println("<a href=\"index.jsp\">Volver</a></BODY></HTML>");
     }
 
     @Override
