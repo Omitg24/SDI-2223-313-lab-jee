@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
-  <title>Vista productos</title>
+  <title>Blog</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet"
@@ -28,7 +28,7 @@
       <li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
       <li class="nav-item"><a class="nav-link" href="admin.jsp">Administrar productos</a></li>
       <li class="nav-item"><a class="nav-link" href="products">Productos</a></li>
-      <li class="nav-item"><a class="nav-link" href="comment.jsp">Añadir comentarios</a></li>
+      <li class="nav-item"><a class="nav-link" href="comment.jsp.jsp">Añadir comentarios</a></li>
       <li class="nav-item"><a class="nav-link" href="Blog">Blog</a></li>
     </ul>
     <div class="nav navbar-right">
@@ -42,11 +42,11 @@
 
 <!-- Contenido -->
 <div class="container" id="main-container">
-  <h2>Vista Productos</h2>
+  <h2>Comentarios</h2>
   <ul>
-    <c:forEach var="item" items="${storeProducts}">
+    <c:forEach var="item" items="${blogComments}">
       <tr>
-        <li>${item.name} - ${item.price}€</li>
+        <li>${item.name}: ${item.text} - ${item.date}</li>
       </tr>
     </c:forEach>
   </ul>

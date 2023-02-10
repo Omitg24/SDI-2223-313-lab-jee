@@ -25,6 +25,9 @@
     //Credencial valido, lo guardo en sesión
     request.getSession().setAttribute("user", "admin");
     response.sendRedirect("admin.jsp");
+  } else if (name != null) {
+    request.getSession().setAttribute("user", name);
+    response.sendRedirect("index.jsp");
   } else {
     //Credencial invalido, lo elimino de sesión (opcional)
     request.getSession().setAttribute("user", null);

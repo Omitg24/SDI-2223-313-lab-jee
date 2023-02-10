@@ -38,6 +38,12 @@
             <li class="nav-item ">
                 <a class="nav-link" href="products">Productos<span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="comment.jsp">Añadir comentarios<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="Blog">Blog<span class="sr-only">(current)</span></a>
+            </li>
         </ul>
         <div class="nav navbar-right">
             <!-- cambiar por el bean -->
