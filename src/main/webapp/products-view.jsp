@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: omart
-  Date: 07/02/2023
-  Time: 19:59
+  Date: 10/02/2023
+  Time: 9:32
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <head>
-  <title>Vista carrito</title>
+  <title>Vista productos</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet"
@@ -27,7 +27,7 @@
       <li class="nav-item"><a class="nav-link" href="AddToShoppingCart">Carrito</a></li>
       <li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
       <li class="nav-item"><a class="nav-link" href="admin.jsp">Administrar productos</a></li>
-      <li class="nav-item"><a class="nav-link" href="products">Productos</a></li>
+      <li class="nav-item"><a class="nav-link" href="admin.jsp">Productos</a></li>
     </ul>
     <div class="nav navbar-right">
       <div class="center-block">
@@ -40,11 +40,11 @@
 
 <!-- Contenido -->
 <div class="container" id="main-container">
-  <h2>Vista Carrito</h2>
+  <h2>Vista Productos</h2>
   <ul>
-    <c:forEach var="item" items="${selectedItems}">
+    <c:forEach var="item" items="${storeProducts}">
       <tr>
-        <li>${item.key} - ${item.value} </li>
+        <li>${item.name} - ${item.price}€</li>
       </tr>
     </c:forEach>
   </ul>
